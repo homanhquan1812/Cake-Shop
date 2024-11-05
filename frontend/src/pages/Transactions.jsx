@@ -98,17 +98,17 @@ const Transactions = () => {
             {
               role == 'User' ? (
                 <>
-                <h2>Lịch sử giao dịch:</h2>
+                <h2>History:</h2>
                   <div id="container" style={{marginTop: '50px'}}>
                     <div className="printing-history-box">
                     <div className="table-container">
                         <table className="content-table">
                         <thead>
                             <tr>
-                            <th>Ngày đặt</th>
-                            <th>Khoá học</th>
-                            <th>Tổng giá tiền</th>
-                            <th>Trạng thái</th>
+                            <th>Ordering date</th>
+                            <th>Products</th>
+                            <th>Total price</th>
+                            <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -127,14 +127,14 @@ const Transactions = () => {
                                 <td>{order.cart.totalPrice}</td>
                                 <td>
                                   {order.status ? (
-                                    <button type="button" className="btn btn-success">Thành công</button>
+                                    <button type="button" className="btn btn-success">Success</button>
                                   ) : (
-                                    <button type="button" className="btn btn-danger">Thất bại</button>
+                                    <button type="button" className="btn btn-danger">Failure</button>
                                   )}
                                 </td>
                               </tr>
                               ) : (
-                                <td colSpan={4}>Bạn chưa đăng kí khóa nào</td>
+                                <td colSpan={4}>No orders yet.</td>
                               )
                             ))
                           }
@@ -146,20 +146,20 @@ const Transactions = () => {
                 </>
               ) : (
                 <>
-                <h2>Tất cả đơn hàng:</h2>
+                <h2>All orders:</h2>
                 <div id="container" style={{marginTop: '50px'}}>
                     <div className="printing-history-box">
                     <div className="table-container">
                         <table className="content-table">
                         <thead>
                             <tr>
-                            <th>Tên học viên</th>
+                            <th>Customer</th>
                             <th>Email</th>
-                            <th>Số điện thoại</th>
-                            <th>Ngày đặt</th>
-                            <th>Khoá học</th>
-                            <th>Tổng giá tiền</th>
-                            <th>Trạng thái</th>
+                            <th>Phone number</th>
+                            <th>Ordering date</th>
+                            <th>Product</th>
+                            <th>Total price</th>
+                            <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -170,7 +170,7 @@ const Transactions = () => {
                                 <td>{order.name}</td>
                                 <td>{order.email}</td>
                                 <td>{order.phonenumber}</td>
-                                <td>{order.createdAt}</td>
+                                <td>{order.created_at}</td>
                                 {
                                   order.cart.items.map((item, index) => (
                                     <div key={index} style={{marginTop: '20px', marginBottom: '20px'}}>
@@ -181,9 +181,9 @@ const Transactions = () => {
                                 <td>{order.cart.totalPrice}</td>
                                 <td>
                                   {order.status ? (
-                                    <button type="button" className="btn btn-success">Thành công</button>
+                                    <button type="button" className="btn btn-success">Success</button>
                                   ) : (
-                                    <button type="button" className="btn btn-danger">Thất bại</button>
+                                    <button type="button" className="btn btn-danger">Failure</button>
                                   )}
                                 </td>
                               </tr>

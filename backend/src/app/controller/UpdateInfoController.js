@@ -26,9 +26,11 @@ class UpdateInfoController {
         }
     }
 
-    async addCourse(req, res, next) {
+    async addProducts(req, res, next) {
         try {
-            const { name, price, id, photo, courseId } = req.body
+            const { name, price, id, photo, productId } = req.body
+
+            console.log(req.body)
 
             const userQuery = 'SELECT * FROM users WHERE id = $1'
             const userResult = await pool.query(userQuery, [id])
@@ -38,7 +40,7 @@ class UpdateInfoController {
             }
 
             const user = userResult.rows[0]
-            const newItems = [...user.cart.items, { name, price, photo, courseId }]
+            const newItems = [...user.cart.items, { name, price, photo, productId }]
             const newTotalPrice = user.cart.totalPrice + price
 
             const updateQuery = `
@@ -55,9 +57,10 @@ class UpdateInfoController {
         }
     }
 
-    async deleteCourse(req, res, next) {
+    async deleteProducts(req, res, next) {
         try {
             const { userId, id } = req.params
+            console.log(userId, id)
 
             const userQuery = 'SELECT * FROM users WHERE id = $1'
             const userResult = await pool.query(userQuery, [userId])
@@ -67,7 +70,7 @@ class UpdateInfoController {
             }
 
             const cart = userResult.rows[0].cart
-            const updatedItems = cart.items.filter(item => item.courseId !== id)
+            const updatedItems = cart.items.filter(item => item.productId !== id)
             const newTotalPrice = updatedItems.reduce((total, item) => total + item.price, 0)
 
             const updateQuery = `

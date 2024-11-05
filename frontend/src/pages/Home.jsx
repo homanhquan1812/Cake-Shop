@@ -25,7 +25,7 @@ const Home = () => {
   };
 
   const submit = () => {
-    navigate('/courses')
+    navigate('/products')
   }
 
   useEffect(() => {
@@ -62,19 +62,17 @@ const Home = () => {
         "/css/style.css"
       ]}
       additionalTitle={[
-        "Trang chủ - R2Sshop"
+        "Homepage"
       ]}></Heads>
       <Headers></Headers>
       <div className="text-center">
-        <h1 className="display-4" style={styles.title}>Nhiệm vụ đào tạo của R2S
+        <h1 className="display-4" style={styles.title}>Welcome to Borcelle Cake Shop!
         </h1>
-        <p style={styles.subtitle}>Học KHOẺ, Giá RẺ</p>
-        <img style={{height: '500px', width: '70%'}}src='/img/homepage.png'></img>
+        {/* <p style={styles.subtitle}>Học KHOẺ, Giá RẺ</p> */}
+        <img style={{height: '500px'}}src='/img/homepage.png'></img>
         <br></br>
         <br></br>
-        <button onClick={submit} type="button" class="btn btn-warning">Đăng kí khóa học ngay</button>
-        <br></br>
-        <br></br>
+        <button onClick={submit} type="button" class="btn btn-warning">ORDER NOW!</button>
         <br></br>
         <br></br>
       </div>

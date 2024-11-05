@@ -100,7 +100,7 @@ const Info = () => {
         "/css/style.css"
       ]}
       additionalTitle={[
-        "Thông tin cá nhân - R2Sshop"
+        "Information"
       ]}/>
       <Headers />
       <div className="container">

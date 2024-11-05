@@ -22,7 +22,7 @@ const Cart = () => {
   const navigateTo = useNavigate()
 
   const deleteCourse = async (id) => {
-    const response = await axios.delete(`http://localhost:5000/updateinfo/deletecourse/${userId}/${id}`)
+    const response = await axios.delete(`http://localhost:5000/updateinfo/deleteproducts/${userId}/${id}`)
 
     if (response.status == 200) {
       console.log("Course deleted from user's cart successfully!")
@@ -108,20 +108,20 @@ const Cart = () => {
         "/css/style.css"
       ]}
       additionalTitle={[
-        "Giỏ hàng - R2Sshop"
+        "Cart"
       ]}></Heads>
       <Headers></Headers>
       <div class="container">
         <main role="main" class="pb-3">
           <br></br>
-          <h2>Giỏ hàng của bạn:</h2>
+          <h2>Your cart:</h2>
         <div className="container cart" style={{marginTop: '-100px'}}>
         <div className="cart_menu">
-        <p style={{fontSize: '20px'}} className="text sp">Số thứ tự</p>
-        <p style={{fontSize: '20px', marginLeft: '-450px'}} className="text sp">Khóa học</p>
+        <p style={{fontSize: '20px'}} className="text sp">No</p>
+        <p style={{fontSize: '20px', marginLeft: '-450px'}} className="text sp">Product name</p>
         <p style={{fontSize: '20px'}} className="text dg"></p>
-        <p style={{fontSize: '20px'}} className="text st">Giá tiền</p>
-        <p style={{fontSize: '20px'}} className="text tt">Điều chỉnh</p>
+        <p style={{fontSize: '20px'}} className="text st">Price</p>
+        <p style={{fontSize: '20px'}} className="text tt">Adjustment</p>
         </div>
         <section className="cart_content">
         <section className="cart_item" role="list">
@@ -157,7 +157,7 @@ const Cart = () => {
                 <span style={{marginLeft: '-260px'}}>{item.price}</span>
                 </div>
                 <div className="content_thaoTac">
-                    <button style={{ marginLeft: '-160px'}} onClick={() => deleteCourse(item.courseId)} className="fX1Y2g button-pink">Xóa</button>
+                    <button style={{ marginLeft: '-160px'}} onClick={() => deleteCourse(item.productId)} className="fX1Y2g button-pink">Delete</button>
                 </div>
             </div>
             </div>
@@ -171,7 +171,7 @@ const Cart = () => {
             <div className="UQv8V6" role="region">
             <div className="fyYBP1" >
                 <div className="aiyQAr">
-                <div style={{marginLeft: '30px'}} className="total">Tổng giá tiền: {cart.totalPrice}</div>
+                <div style={{marginLeft: '30px'}} className="total">Total price: {cart.totalPrice}</div>
                 </div>
             </div>
             </div>

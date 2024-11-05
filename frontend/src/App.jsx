@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import AddCourses from './pages/AddCourses'
+import AddProducts from './pages/AddProducts'
 import Error from './pages/Error'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Show_Products from './pages/Courses'
-import About from './pages/About'
+import Show_Products from './pages/Products'
 import Cart from './pages/Cart'
-import CourseDetails from './pages/CourseDetails'
+import ProductDetails from './pages/ProductDetails'
 import Transactions from './pages/Transactions'
-import EditCourses from './pages/EditCourses'
+import EditProducts from './pages/EditProducts'
 import Info from './pages/Info'
 import Success from './pages/Success'
 
@@ -54,11 +53,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/courses" element={<Show_Products></Show_Products>}></Route>
-        <Route path="/courses/:id" element={<CourseDetails></CourseDetails>}></Route>
+        <Route path="/products" element={<Show_Products></Show_Products>}></Route>
+        <Route path="/products/:id" element={<ProductDetails></ProductDetails>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/about" element={<About></About>}></Route>
         <Route path="*" element={<Error></Error>}></Route>
       </Routes>
     )
@@ -68,15 +66,14 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/courses" element={<Show_Products></Show_Products>}></Route>
-        <Route path="/courses/:id" element={<CourseDetails></CourseDetails>}></Route>
+        <Route path="/products" element={<Show_Products></Show_Products>}></Route>
+        <Route path="/products/:id" element={<ProductDetails></ProductDetails>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
-        <Route path="/about" element={<About></About>}></Route>
         <Route path="/cart" element={<Cart></Cart>}></Route>
         <Route path="/transactions" element={<Transactions></Transactions>}></Route>
-        <Route path="/courses/add" element={<AddCourses></AddCourses>}></Route>
-        <Route path="/courses/edit/:id" element={<EditCourses></EditCourses>}></Route>
+        <Route path="/products/add" element={<AddProducts></AddProducts>}></Route>
+        <Route path="/products/edit/:id" element={<EditProducts></EditProducts>}></Route>
         <Route path="/info/:id" element={<Info></Info>}></Route>
         <Route path="/success" element={<Success></Success>}></Route>
         <Route path="*" element={<Error></Error>}></Route>

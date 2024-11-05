@@ -62,17 +62,17 @@ const Login = () => {
         "/css/style.css"
       ]}
       additionalTitle={[
-        "Đăng nhập - R2Sshop"
+        "Login"
       ]} />
       <Headers />
       <div className="container">
         <main role="main" className="pb-3">
           <br />
-          <h2>Đăng nhập tài khoản</h2>
+          <h2>Login</h2>
           <br />
           <form onSubmit={handleSubmit}>
             <div className="row mb-3">
-              <label className="col-sm-3 col-form-label">Tài khoản</label>
+              <label className="col-sm-3 col-form-label">Username</label>
               <div className="col-sm-6">
                 <input type="text" className="form-control" name="username" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
               </div>

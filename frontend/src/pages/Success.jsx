@@ -28,14 +28,14 @@ const Success = () => {
       ]}></Heads>
         <Headers></Headers>
       <div className="success_detail">
-          <h2>Đăng ký khóa học thành công!</h2>
+          <h2>Ordered successfully!</h2>
           <i className="fa-solid fa-check" />
-          <h3>R2Sshop sẽ liên hệ lại với bạn để tư vấn và xác nhận.</h3>
-          <h3>Xin vui lòng giữ liên lạc!</h3>
+          <h3>We have received your orders.</h3>
+          <h3>Please keep in touch!</h3>
       </div>
       <div className="success_button">
-          <button className="button-pink " onClick={coursesDirect}>Đăng ký tiếp</button>
-          <button className="button-pink " onClick={homeDirect}>Quay lại trang chủ</button>
+          <button className="button-pink " onClick={coursesDirect}>Continue buying</button>
+          <button className="button-pink " onClick={homeDirect}>Homepage</button>
       </div>
       <Footers></Footers>
         <a href="#" className="backtotop cd-top text-replace js-cd-top">

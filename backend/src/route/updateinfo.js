@@ -5,9 +5,9 @@ const router = express.Router()
 const updateInfo = require('../app/controller/UpdateInfoController.js')
 
 router.get('/cart/:id', updateInfo.getCart)
-router.post('/addcourse', updateInfo.addCourse)
+router.post('/addproducts', updateInfo.addProducts)
 router.put('/info', updateInfo.updateInfo)
 router.put('/password', updateInfo.updatePassword)
-router.delete('/deletecourse/:userId/:id', updateInfo.deleteCourse)
+router.delete('/deleteproducts/:userId/:id', updateInfo.deleteProducts)
 
 module.exports = router

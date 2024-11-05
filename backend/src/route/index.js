@@ -2,12 +2,12 @@ require('dotenv').config()
 
 const loginRouter = require('./login')
 const registerRouter = require('./register')
-const courseRouter = require('./course')
+const productRouter = require('./product')
 const updateInfoRouter = require('./updateinfo')
 const orderRouter = require('./order')
 
 function route(app) {
-    app.use('/course', courseRouter)
+    app.use('/products', productRouter)
     app.use('/login', loginRouter)
     app.use('/register', registerRouter)
     app.use(`/updateinfo`, updateInfoRouter)
