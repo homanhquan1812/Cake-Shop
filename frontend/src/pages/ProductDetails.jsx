@@ -20,6 +20,7 @@ const ProductDetails = () => {
     })
     const [role, setRole] = useState('')
     const [userId, setUserId] = useState('')
+    const [quantity, setQuantity] = useState(1)
     const navigateTo = useNavigate()
 
     const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -64,7 +65,8 @@ const ProductDetails = () => {
           name: productsId.name,
           price: productsId.price,
           photo: productsId.photo,
-          productId: productsId.id
+          productId: productsId.id,
+          quantity: quantity
         })
 
         if (response.status == 201) {
@@ -144,15 +146,13 @@ const ProductDetails = () => {
                         <br></br>
                           <p className="card-text">{productsId.description}</p>
                           <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                          <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(2, 1fr)',
-                            gridTemplateRows: 'repeat(2, auto)',
-                            gap: '10px'
-                            }}>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridGap: '10px' }}>
                             {
                               isLoggedIn ? (
+                                <>
                                 <button type='button' onClick={addproducts} className="btn btn-danger">Buy now</button>
+                                <input style={{display: 'inline'}} defaultValue={1} onChange={(e) => setQuantity(e.target.value)}></input>
+                                </>
                               ) : (
                                 <button type='button' onClick={loginDirect} className="btn btn-danger">Buy now</button>
                               )

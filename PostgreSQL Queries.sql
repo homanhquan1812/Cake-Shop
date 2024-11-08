@@ -36,7 +36,7 @@ CREATE TABLE products (
 CREATE TABLE orders (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) NOT NULL,
     phonenumber VARCHAR(20),
     user_id UUID REFERENCES users(id) ON DELETE CASCADE,
     cart JSONB DEFAULT '{"totalPrice": 0, "items": []}',  -- Default value as JSON

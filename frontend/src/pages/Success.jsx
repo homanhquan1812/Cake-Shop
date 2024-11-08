@@ -8,7 +8,7 @@ const Success = () => {
   const navigateTo = useNavigate()
 
   const coursesDirect = () => {
-    navigateTo('/courses')
+    navigateTo('/products')
   }
 
   const homeDirect = () => {

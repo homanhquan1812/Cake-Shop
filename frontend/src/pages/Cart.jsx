@@ -120,7 +120,7 @@ const Cart = () => {
         <p style={{fontSize: '20px'}} className="text sp">No</p>
         <p style={{fontSize: '20px', marginLeft: '-450px'}} className="text sp">Product name</p>
         <p style={{fontSize: '20px'}} className="text dg"></p>
-        <p style={{fontSize: '20px'}} className="text st">Price</p>
+        <p style={{fontSize: '20px'}} className="text st">Price + Quantity</p>
         <p style={{fontSize: '20px'}} className="text tt">Adjustment</p>
         </div>
         <section className="cart_content">
@@ -154,7 +154,7 @@ const Cart = () => {
                 <div className="content_soLuong">
                 </div>
                 <div className="content_soTien">
-                <span style={{marginLeft: '-260px'}}>{item.price}</span>
+                <span style={{marginLeft: '-260px'}}>{item.price} x {item.quantity}</span>
                 </div>
                 <div className="content_thaoTac">
                     <button style={{ marginLeft: '-160px'}} onClick={() => deleteCourse(item.productId)} className="fX1Y2g button-pink">Delete</button>

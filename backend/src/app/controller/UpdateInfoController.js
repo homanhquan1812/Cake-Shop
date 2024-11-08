@@ -28,7 +28,7 @@ class UpdateInfoController {
 
     async addProducts(req, res, next) {
         try {
-            const { name, price, id, photo, productId } = req.body
+            const { name, price, id, photo, productId, quantity } = req.body
 
             console.log(req.body)
 
@@ -40,8 +40,8 @@ class UpdateInfoController {
             }
 
             const user = userResult.rows[0]
-            const newItems = [...user.cart.items, { name, price, photo, productId }]
-            const newTotalPrice = user.cart.totalPrice + price
+            const newItems = [...user.cart.items, { name, price, photo, productId, quantity }]
+            const newTotalPrice = user.cart.totalPrice + (price * quantity)
 
             const updateQuery = `
                 UPDATE users

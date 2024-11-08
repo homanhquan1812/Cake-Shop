@@ -92,7 +92,7 @@ const Register = () => {
                 <div className="row mb-3">
                   <label className="col-sm-3 col-form-label">Key</label>
                   <div className="col-sm-6">
-                    <input type="text" className="form-control" placeholder='Chỉ dành cho nhân viên R2Sshop, vui lòng để trống.' name="key" id="key" value={key} onChange={(e) => setKey(e.target.value)} />
+                    <input type="text" className="form-control" placeholder='Only for staffs. Please ignore this box!!!' name="key" id="key" value={key} onChange={(e) => setKey(e.target.value)} />
                   </div>
                 </div>
                 {

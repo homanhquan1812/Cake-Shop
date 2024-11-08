@@ -106,7 +106,7 @@ const Transactions = () => {
                         <thead>
                             <tr>
                             <th>Ordering date</th>
-                            <th>Products</th>
+                            <th>Products + Quantity</th>
                             <th>Total price</th>
                             <th>Status</th>
                             </tr>
@@ -116,11 +116,11 @@ const Transactions = () => {
                             userOrders.map((order, index) => (
                               (order.cart.items.length > 0) ? (
                                 <tr key={index}>
-                                <td>{order.createdAt}</td>
+                                <td>{order.created_at}</td>
                                 {
                                   order.cart.items.map((item, index) => (
                                     <div key={index} style={{marginTop: '20px', marginBottom: '20px'}}>
-                                      {item.name}
+                                      {item.name} x {item.quantity}
                                     </div>
                                   ))
                                 }
@@ -157,7 +157,7 @@ const Transactions = () => {
                             <th>Email</th>
                             <th>Phone number</th>
                             <th>Ordering date</th>
-                            <th>Product</th>
+                            <th>Product + Quantity</th>
                             <th>Total price</th>
                             <th>Status</th>
                             </tr>
@@ -174,7 +174,7 @@ const Transactions = () => {
                                 {
                                   order.cart.items.map((item, index) => (
                                     <div key={index} style={{marginTop: '20px', marginBottom: '20px'}}>
-                                      {item.name}
+                                      {item.name} x {item.quantity}
                                     </div>
                                   ))
                                 }

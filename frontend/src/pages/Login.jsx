@@ -97,10 +97,10 @@ const Login = () => {
             )}
             <div className="row mb-3">
               <div className="offset-sm-3 col-sm-3 d-grid">
-                <button type="submit" className="btn btn-primary" disabled={isBlocked}>Đăng nhập</button>
+                <button type="submit" className="btn btn-primary" disabled={isBlocked}>Login</button>
               </div>
               <div className="col-sm-3 d-grid">
-                <a className="btn btn-outline-primary" href="/" role="button">Thoát</a>
+                <a className="btn btn-outline-primary" href="/" role="button">Leave</a>
               </div>
             </div>
           </form>
